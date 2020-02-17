@@ -69,3 +69,11 @@ window.addEventListener('mousemove', (e) => {
     updateSolarChart(degrees);
   }
 });
+
+function mousemoveEvent() {
+  if (sliderKnobHandler.isDragEl) {
+    let percent = getSliderPercent();
+    let degrees = getDegreesFromPercent(percent);
+    updateSolarChart(degrees);
+  }
+}

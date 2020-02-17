@@ -50,7 +50,7 @@ export class DragHandler {
 
   _addWindowEventListeners() {
     window.addEventListener('touchstart', (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       e.stopPropagation();
       this._mouseDownEvent(e);
       consoleToPage('touchstart');
