@@ -50,25 +50,12 @@ export class DragHandler {
 
   _addWindowEventListeners() {
     window.addEventListener('touchstart', (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       e.stopPropagation();
       this._mouseDownEvent(e);
       consoleToPage('touchstart');
     }, {passive: false});
-    // window.ontouchstart = 
-    // window.onmousedown = (e) => {
-    //   e.preventDefault();
-    //   e.stopPropagation();
-    //   this._mouseDownEvent(e);
-    //   // consoleToPage('touchstart');
-    // };
 
-    // window.ontouchend = 
-    // window.onmouseup = (e) => {
-    //   e.preventDefault();
-    //   this._mouseUpEvent(e);
-    //   console.log('touchend');
-    // }
     window.addEventListener('touchend', (e) => {
       e.preventDefault();
       this._mouseUpEvent(e);
