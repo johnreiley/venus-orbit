@@ -63,12 +63,12 @@ function updateSolarChart(orbitDegrees) {
 }
 
 window.addEventListener('mousemove', (e) => {
-  if (sliderKnobHandler.isDragEl) {
-    let percent = getSliderPercent();
-    let degrees = getDegreesFromPercent(percent);
-    updateSolarChart(degrees);
-  }
+  mousemoveEvent();
 });
+window.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  mousemoveEvent();
+})
 
 function mousemoveEvent() {
   if (sliderKnobHandler.isDragEl) {
