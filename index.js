@@ -66,7 +66,7 @@ window.addEventListener('mousemove', (e) => {
   mousemoveEvent();
 });
 window.addEventListener('touchmove', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   mousemoveEvent();
 }, {passive: false});
 

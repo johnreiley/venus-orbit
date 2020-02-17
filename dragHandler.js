@@ -58,7 +58,7 @@ export class DragHandler {
     }, {passive: false});
 
     window.addEventListener('touchmove', (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       e.stopPropagation();
       this._mouseMoveEvent(e);
       console.log('touchmove');
