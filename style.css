@@ -112,9 +112,4 @@ body {
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
 }
-
-.slider > .slider-circle:active {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
 /*# sourceMappingURL=style.css.map */

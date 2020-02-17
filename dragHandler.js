@@ -43,27 +43,39 @@ export class DragHandler {
   }
 
   _addWindowEventListeners() {
+    window.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      this._mouseDownEvent(e);
+      console.log('touchstart');
+    }, {passive: false});
+
+    window.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      this._mouseUpEvent(e);
+      console.log('touchend');
+    }, {passive: false});
+
+    window.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      this._mouseMoveEvent(e);
+      console.log('touchmove');
+    }, {passive: false});
+
     window.addEventListener('mousedown', (e) => {
       this._mouseDownEvent(e);
-      e.preventDefault();
+      console.log('mousedown');
     });
+
     window.addEventListener('mouseup', (e) => {
       this._mouseUpEvent(e);
-      e.preventDefault();
+      console.log('mouseup');
     });
+
     window.addEventListener('mousemove', (e) => {
       this._mouseMoveEvent(e);
-      e.preventDefault()
+      console.log('mousemove');
     });
-    window.addEventListener('touchstart', (e) => {
-      this._mouseDownEvent(e);
-    });
-    window.addEventListener('touchend', (e) => {
-      this._mouseUpEvent(e);
-    });
-    window.addEventListener('touchmove', (e) => {
-      this._mouseMoveEvent(e);
-    });
+
   }
 
   _mouseDownEvent(e) {

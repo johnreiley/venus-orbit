@@ -106,9 +106,9 @@ body {
     transition: transform 0.1s;
   }
 
-  &>.slider-circle:active {
-    transform: scale(1.1);
-  }
+  // &>.slider-circle:active {
+  //   transform: scale(1.1);
+  // }
 }
 
 // input[type=range]::-webkit-slider-thumb {
