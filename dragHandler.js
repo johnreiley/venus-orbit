@@ -53,7 +53,7 @@ export class DragHandler {
       e.preventDefault();
       e.stopPropagation();
       this._mouseDownEvent(e);
-      console.log('touchstart');
+      consoleToPage('touchstart');
     }, {passive: false});
 
     window.addEventListener('touchend', (e) => {
