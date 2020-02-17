@@ -68,7 +68,7 @@ window.addEventListener('mousemove', (e) => {
 window.addEventListener('touchmove', (e) => {
   e.preventDefault();
   mousemoveEvent();
-})
+}, {passive: true})
 
 function mousemoveEvent() {
   if (sliderKnobHandler.isDragEl) {

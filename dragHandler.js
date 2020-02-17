@@ -23,7 +23,7 @@ export class DragHandler {
    */
   updateX( /*Event*/ e) {
     const screenX = e.screenX || e.touches[0].screenX;
-    console.log(e.touches[0].screenX);
+    // console.log(e.touches[0].screenX);
     // consoleToPage(e.touches[0].screenX);
     this._xDiff = screenX - this._xPrev;
     this._xPrev = screenX;
