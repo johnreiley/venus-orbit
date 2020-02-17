@@ -1,0 +1,118 @@
+$solar-container-dimension: 90; 
+
+$sun-diameter: 3em;
+$sun-bg-color: rgb(255, 241, 113);
+
+$venus-diameter: 2em;
+$venus-bg-color1: rgb(255, 107, 70);
+$venus-bg-color2: rgb(97, 27, 9);
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(20, 20, 20);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* SOLAR STYLES */
+.solar-container {
+  user-select: none;
+  margin: 2em auto;
+  border: solid rgb(136, 136, 136) 1px;
+  width: 90vw;
+  height: 90vw;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  &>.fact-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    color: white;
+  }
+
+  &>.sun {
+    width: $sun-diameter;
+    height: $sun-diameter;
+    background-color: $sun-bg-color;
+    border-radius: $sun-diameter;
+    box-shadow: 0 0 $sun-diameter $sun-diameter/5 $sun-bg-color;
+  }
+
+  &>.venus-orbit {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    background-color: transparent;
+    border: solid gray 2px;
+    border-radius: 50%;
+    // transition: transform 0.1s;
+    transform: rotateZ(0deg);
+  }
+}
+
+.venus {
+  height: 2em;
+  width: 2em;
+  // background-image: linear-gradient(#{$venus-bg-color1}, #{$venus-bg-color2});
+  background-image: url('/assets/venus.png');
+  background-size: cover;
+  border-radius: 1em;
+  position: absolute;
+  bottom: - $venus-diameter / 2;
+  left: calc(50% - #{$venus-diameter} / 2);
+
+  &>.direction-indicator {
+    height: $venus-diameter * 5;
+    width: 1px;
+    background-color: red;
+    position: absolute;
+    top: - $venus-diameter * 5;
+    left: $venus-diameter / 2;
+  }
+}
+
+
+/* SLIDER STYLES */
+.slider {
+  display: flex;
+  position: relative;
+  margin: 2em auto;
+  background-color: gray;
+  height: 10px;
+  width: 70%;
+  min-width: 250px;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 3px black;
+  align-items: center;
+
+  &>.slider-circle {
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(134, 134, 134);
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s;
+  }
+
+  &>.slider-circle:active {
+    transform: scale(1.1);
+  }
+}
+
+// input[type=range]::-webkit-slider-thumb {
+//   border-radius: 20px;
+//   height: 30px;
+//   width: 30px;
+//   // background-color: rgb(134, 134, 134);
+//   box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
+// }

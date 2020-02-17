@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* SOLAR STYLES */
+.solar-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 2em auto;
+  border: solid #888888 1px;
+  width: 90vw;
+  height: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.solar-container > .fact-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  color: white;
+}
+
+.solar-container > .sun {
+  width: 3em;
+  height: 3em;
+  background-color: #fff171;
+  border-radius: 3em;
+  -webkit-box-shadow: 0 0 3em 0.6em #fff171;
+          box-shadow: 0 0 3em 0.6em #fff171;
+}
+
+.solar-container > .venus-orbit {
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  background-color: transparent;
+  border: solid gray 2px;
+  border-radius: 50%;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+.venus {
+  height: 2em;
+  width: 2em;
+  background-image: url("/assets/venus.png");
+  background-size: cover;
+  border-radius: 1em;
+  position: absolute;
+  bottom: -1em;
+  left: calc(50% - 2em / 2);
+}
+
+.venus > .direction-indicator {
+  height: 10em;
+  width: 1px;
+  background-color: red;
+  position: absolute;
+  top: -10em;
+  left: 1em;
+}
+
+/* SLIDER STYLES */
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 2em auto;
+  background-color: gray;
+  height: 10px;
+  width: 70%;
+  min-width: 250px;
+  max-width: 400px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 3px black;
+          box-shadow: inset 0 0 3px black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slider > .slider-circle {
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  border-radius: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: #868686;
+  -webkit-box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.slider > .slider-circle:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=style.css.map */
