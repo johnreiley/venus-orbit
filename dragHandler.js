@@ -49,31 +49,31 @@ export class DragHandler {
   }
 
   _addWindowEventListeners() {
-    // window.addEventListener('touchstart', (e) => {
+    window.addEventListener('touchstart', (e) => {
+      // e.preventDefault();
+      e.stopPropagation();
+      this._mouseDownEvent(e);
+      consoleToPage('touchstart');
+    }, {passive: false});
+    // window.ontouchstart = 
+    // window.onmousedown = (e) => {
     //   e.preventDefault();
     //   e.stopPropagation();
     //   this._mouseDownEvent(e);
-    //   consoleToPage('touchstart');
-    // }, {passive: false});
-    window.ontouchstart = 
-    window.onmousedown = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      this._mouseDownEvent(e);
-      // consoleToPage('touchstart');
-    };
+    //   // consoleToPage('touchstart');
+    // };
 
-    window.ontouchend = 
-    window.onmouseup = (e) => {
-      e.preventDefault();
-      this._mouseUpEvent(e);
-      console.log('touchend');
-    }
-    // window.addEventListener('touchend', (e) => {
+    // window.ontouchend = 
+    // window.onmouseup = (e) => {
     //   e.preventDefault();
     //   this._mouseUpEvent(e);
     //   console.log('touchend');
-    // }, {passive: false});
+    // }
+    window.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      this._mouseUpEvent(e);
+      console.log('touchend');
+    }, {passive: false});
 
     window.addEventListener('touchmove', (e) => {
       e.preventDefault();
@@ -82,15 +82,15 @@ export class DragHandler {
       console.log('touchmove');
     }, {passive: false});
 
-    // window.addEventListener('mousedown', (e) => {
-    //   this._mouseDownEvent(e);
-    //   console.log('mousedown');
-    // });
+    window.addEventListener('mousedown', (e) => {
+      this._mouseDownEvent(e);
+      console.log('mousedown');
+    });
 
-    // window.addEventListener('mouseup', (e) => {
-    //   this._mouseUpEvent(e);
-    //   console.log('mouseup');
-    // });
+    window.addEventListener('mouseup', (e) => {
+      this._mouseUpEvent(e);
+      console.log('mouseup');
+    });
 
     window.addEventListener('mousemove', (e) => {
       this._mouseMoveEvent(e);
