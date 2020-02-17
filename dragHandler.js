@@ -18,13 +18,8 @@ export class DragHandler {
     this._addWindowEventListeners();
   }
 
-  /**
-   * @param e {TouchEvent}
-   */
   updateX( /*Event*/ e) {
     const screenX = e.screenX || e.touches[0].screenX;
-    // console.log(e.touches[0].screenX);
-    // consoleToPage(e.touches[0].screenX);
     this._xDiff = screenX - this._xPrev;
     this._xPrev = screenX;
     let value = this._xDiff + this._stripPxValue(this._dragEl.style.left);
