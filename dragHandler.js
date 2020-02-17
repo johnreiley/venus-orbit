@@ -18,9 +18,14 @@ export class DragHandler {
     this._addWindowEventListeners();
   }
 
+  /**
+   * @param e {TouchEvent}
+   */
   updateX( /*Event*/ e) {
-    this._xDiff = e.screenX - this._xPrev;
-    this._xPrev = e.screenX;
+    const screenX = e.screenX || e.touches[0].screenX;
+    console.log(e.touches[0].screenX);
+    this._xDiff = screenX - this._xPrev;
+    this._xPrev = screenX;
     let value = this._xDiff + this._stripPxValue(this._dragEl.style.left);
     if (value >= 0 && value <= this._dragElContainer.clientWidth - this._dragEl.clientWidth) {
       this._dragEl.style.left = `${value}px`;
