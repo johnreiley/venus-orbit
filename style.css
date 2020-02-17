@@ -60,7 +60,7 @@ body {
 .venus {
   height: 2em;
   width: 2em;
-  background-image: url("/assets/venus.png");
+  background-image: url("./assets/venus.png");
   background-size: cover;
   border-radius: 1em;
   position: absolute;
