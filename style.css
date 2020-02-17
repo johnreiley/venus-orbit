@@ -112,4 +112,8 @@ body {
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
 }
+
+#console {
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */

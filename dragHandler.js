@@ -24,6 +24,7 @@ export class DragHandler {
   updateX( /*Event*/ e) {
     const screenX = e.screenX || e.touches[0].screenX;
     console.log(e.touches[0].screenX);
+    consoleToPage(e.touches[0].screenX);
     this._xDiff = screenX - this._xPrev;
     this._xPrev = screenX;
     let value = this._xDiff + this._stripPxValue(this._dragEl.style.left);
@@ -50,6 +51,7 @@ export class DragHandler {
   _addWindowEventListeners() {
     window.addEventListener('touchstart', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       this._mouseDownEvent(e);
       console.log('touchstart');
     }, {passive: false});
@@ -62,6 +64,7 @@ export class DragHandler {
 
     window.addEventListener('touchmove', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       this._mouseMoveEvent(e);
       console.log('touchmove');
     }, {passive: false});
@@ -80,7 +83,6 @@ export class DragHandler {
       this._mouseMoveEvent(e);
       console.log('mousemove');
     });
-
   }
 
   _mouseDownEvent(e) {
@@ -108,4 +110,10 @@ export class DragHandler {
     }
   }
 
+}
+
+
+
+function consoleToPage(info) {
+  document.querySelector('#console').innerHTML += "<br>" + info;
 }
